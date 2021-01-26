@@ -1,4 +1,4 @@
-package com.liuhx.nacos.demo.controller;
+package com.liuhx.nacos.demo.springclouddemo.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("config")
 @RefreshScope
 public class ConfigController {
-    @Value("${useLocalCache:false}")
-    private boolean useLocalCache;
+    @Value("${name:123}")
+    private String name;
 
     @GetMapping("get")
-    public boolean get() {
-        return useLocalCache;
+    public String get() {
+        return name;
     }
 }

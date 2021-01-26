@@ -1,0 +1,7 @@
+spring:
+  data:
+    mongodb:
+      auto-index-creation: false
+      uri: mongodb://10.2.6.220:27017/data-cleansing
+      #username: admin
+      #password: passowrd
