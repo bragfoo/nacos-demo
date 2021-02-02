@@ -1,10 +1,6 @@
 spring:
     application:
-        name: spring-cloud-demo 
-    profiles:
-        include:
-            - mongo
-            - redis
+        name: spring-cloud-consumer
     cloud:
         nacos:
             config:
@@ -19,9 +15,8 @@ spring:
                 server-addr: 10.2.6.220:8848
                 group: DEFAULT_GROUP
                 file-extension: yaml
-                port: 9001
 server:
-  port: 9001
+  port: 8080
   servlet:
     context-path: /
 logging:
