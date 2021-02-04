@@ -8,7 +8,7 @@ import com.liuhx.nacos.nacos.consumer.springcloudconsumer.entity.po.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@FeignClient(value = "spring-cloud-demo", path = "/user/", fallbackFactory = FallbackClientFactory.class)
+@FeignClient(value = "spring-cloud-user", path = "/user/", fallbackFactory = FallbackClientFactory.class)
 public interface UserService {
     @GetMapping("findAllUser")
     CommonResponse<List<User>> findAllUser();
