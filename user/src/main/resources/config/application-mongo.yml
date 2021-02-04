@@ -1,0 +1,7 @@
+spring:
+  data:
+    mongodb:
+      auto-index-creation: false
+      uri: mongodb://8.130.52.191:27017/nacos-demo
+      #username: admin
+      #password: passowrd

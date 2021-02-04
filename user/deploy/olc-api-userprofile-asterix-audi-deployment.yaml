@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: olc-api-userprofile-audi
+  namespace: asterix
+  annotations:
+    kubernetes.io/elb.class: union
+spec:
+  type: NodePort
+  ports:
+    - port: 9010
+      targetPort: 9001
+      nodePort: 30005
+  selector:
+    app: olc-api-userprofile-audi
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: olc-api-userprofile-audi
+  namespace: asterix
+spec:
+  replicas: 2
+  minReadySeconds: 15
+  template:
+    metadata:
+      labels:
+        app: olc-api-userprofile-audi
+    spec:
+      containers:
+        - name: olc-api-userprofile-audi
+          image: swr.cn-north-1.myhuaweicloud.com/off-line/olc-api-userprofile:{{TAG}}
+          command: ['java', '-Djava.security.egd=file:/dev/./urandom','-Dspring.config.location=/config/', '-jar', 'app.jar']
+          ports:
+            - containerPort: 8083
+          volumeMounts:
+            - name: config-volume
+              mountPath: /config/
+      volumes:
+        - name: config-volume
+          configMap:
+            name: olc-api-userprofile-audi
+      imagePullSecrets:
+        - name: default-secret
