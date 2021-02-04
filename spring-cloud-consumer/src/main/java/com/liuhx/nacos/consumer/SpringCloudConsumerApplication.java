@@ -1,4 +1,4 @@
-package com.liuhx.nacos.nacos.consumer.springcloudconsumer;
+package com.liuhx.nacos.consumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

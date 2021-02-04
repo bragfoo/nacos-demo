@@ -18,7 +18,6 @@ spring:
                 enabled: true 
                 server-addr: 8.130.52.191:8848
                 group: nacos-demo
-                file-extension: yaml
                 port: 9001
 server:
   port: 9001

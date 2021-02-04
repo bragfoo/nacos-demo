@@ -2,6 +2,6 @@ spring:
   data:
     mongodb:
       auto-index-creation: false
-      uri: mongodb://8.130.52.191:27017/nacos-demo
+      uri: mongodb://hxliu:iDBNcJ9CKTb6Yr9@8.130.52.191:27017/nacos-demo
       #username: admin
       #password: passowrd

@@ -1,6 +1,6 @@
-package com.liuhx.nacos.nacos.consumer.springcloudconsumer.config;
+package com.liuhx.nacos.consumer.config;
 
-import com.liuhx.nacos.nacos.consumer.springcloudconsumer.config.response.CommonResponse;
+import com.liuhx.nacos.common.config.response.CommonResponse;
 
 import org.springframework.stereotype.Component;
 
@@ -16,8 +16,8 @@ public class FallbackClientFactory implements FallbackFactory<CommonResponse<Str
         // TODO Auto-generated method stub
         log.error("hystrix ={} ", arg0.getMessage());
         CommonResponse<String> response = new CommonResponse<String>();
-        response.setErrorCode("500");
-        response.setErrorMessage("服务异常");
+        response.setCode("500");
+        response.setData("服务异常");
         return response;
     }
     

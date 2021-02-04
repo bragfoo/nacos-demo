@@ -1,10 +1,10 @@
-package com.liuhx.nacos.nacos.consumer.springcloudconsumer.feign;
+package com.liuhx.nacos.consumer.feign;
 
 import java.util.List;
 
-import com.liuhx.nacos.nacos.consumer.springcloudconsumer.config.FallbackClientFactory;
-import com.liuhx.nacos.nacos.consumer.springcloudconsumer.config.response.CommonResponse;
-import com.liuhx.nacos.nacos.consumer.springcloudconsumer.entity.po.User;
+import com.liuhx.nacos.common.config.response.CommonResponse;
+import com.liuhx.nacos.common.entity.po.User;
+import com.liuhx.nacos.consumer.config.FallbackClientFactory;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 

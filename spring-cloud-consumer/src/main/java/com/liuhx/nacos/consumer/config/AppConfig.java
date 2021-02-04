@@ -1,4 +1,4 @@
-package com.liuhx.nacos.nacos.consumer.springcloudconsumer.config;
+package com.liuhx.nacos.consumer.config;
 
 import java.time.Duration;
 
@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
 @Configuration
-@EnableFeignClients(basePackages = "com.liuhx.nacos.nacos.consumer.springcloudconsumer.feign")
+@EnableFeignClients(basePackages = "com.liuhx.nacos.consumer.feign")
 @EnableDiscoveryClient
 public class AppConfig {
     @Bean

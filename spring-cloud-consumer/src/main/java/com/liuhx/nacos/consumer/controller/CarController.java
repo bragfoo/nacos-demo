@@ -1,9 +1,9 @@
-package com.liuhx.nacos.nacos.consumer.springcloudconsumer.controller;
+package com.liuhx.nacos.consumer.controller;
 
 import javax.annotation.Resource;
 
 import com.alibaba.fastjson.JSON;
-import com.liuhx.nacos.nacos.consumer.springcloudconsumer.feign.UserService;
+import com.liuhx.nacos.consumer.feign.UserService;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -8,7 +8,7 @@
         <version>1.0.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-	<groupId>com.liuhx.nacos.nacos.consumer</groupId>
+	<groupId>com.liuhx.nacos</groupId>
 	<artifactId>spring-cloud-consumer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-cloud-consumer</name>
@@ -16,6 +16,11 @@
 	
 
 	<dependencies>
+		<dependency>
+			<groupId>com.liuhx.nacos</groupId>
+			<artifactId>common</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>

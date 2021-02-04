@@ -1,4 +1,4 @@
-package com.liuhx.nacos.nacos.consumer.springcloudconsumer.config;
+package com.liuhx.nacos.consumer.config;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 
-import com.liuhx.nacos.nacos.consumer.springcloudconsumer.config.response.UnifiedRequestResponseBodyMethodProcessor;
+import com.liuhx.nacos.common.config.response.UnifiedRequestResponseBodyMethodProcessor;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
