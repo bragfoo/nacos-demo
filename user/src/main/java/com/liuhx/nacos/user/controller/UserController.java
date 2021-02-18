@@ -68,4 +68,8 @@ public class UserController {
         String userId = request.getAttribute("userId").toString();
         return userService.updatePassword(userId,oldPassword,newPassword);
     }
+    @GetMapping("getToken")
+    public User getToken(String token){
+        return userService.getToken(token);
+    }
 }

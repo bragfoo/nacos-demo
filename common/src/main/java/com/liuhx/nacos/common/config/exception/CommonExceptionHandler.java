@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author: wuqiupeng <qpwu@vw-mobvoi.com>
+ * @author: 
  * @date: 2020/4/30 14:47
  * @description: 自定义异常处理类
  */
@@ -48,18 +48,17 @@ public class CommonExceptionHandler {
     }
 
     /**
-     * 全局异常
+     * RuntimeException异常
      *
      * @param e
      * @return
      */
-    @ExceptionHandler(value = BindException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ResponseEntity<CommonResponse<String>> handleException(BindException e) {
+    @ExceptionHandler(value = RuntimeException.class)
+    public ResponseEntity<CommonResponse<String>> handleException(RuntimeException e) {
         log.error(e.getMessage(), e);
         CommonResponse<String> response = new CommonResponse<String>();
         response.setCode("10000");
-        response.setMessage(e.getBindingResult().getAllErrors().get(0).getDefaultMessage());
+        response.setMessage(e.getMessage());
         response.setData("");
         return new ResponseEntity<>(response, HttpStatus.OK);
     }

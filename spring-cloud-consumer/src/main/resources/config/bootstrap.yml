@@ -1,19 +1,25 @@
 spring:
     application:
         name: spring-cloud-consumer
+    zipkin:
+        base-url: http://aliyun:9411
     cloud:
         nacos:
             config:
                 namespace: 8566ec2e-1343-4dcb-97b2-62010191d501
                 enabled: true 
-                server-addr: 8.130.52.191:8848
+                server-addr: aliyun:8848
                 group: nacos-demo
                 file-extension: yaml
             discovery:
                 namespace: 8566ec2e-1343-4dcb-97b2-62010191d501
                 enabled: true 
-                server-addr: 8.130.52.191:8848
+                server-addr: aliyun:8848
                 group: nacos-demo
+        sentinel:
+            transport:
+                port: 8719
+                dashboard: aliyun:8858
 server:
   port: 8080
   servlet:
