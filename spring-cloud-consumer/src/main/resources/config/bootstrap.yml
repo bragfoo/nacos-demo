@@ -1,6 +1,9 @@
 spring:
     application:
         name: spring-cloud-consumer
+    profiles:
+        include:
+            - redis
     zipkin:
         base-url: http://aliyun:9411
     cloud:
