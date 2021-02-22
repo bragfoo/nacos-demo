@@ -6,6 +6,7 @@
         <module>spring-cloud-consumer</module>
         <module>user</module>
         <module>common</module>
+        <module>netty</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -24,6 +25,7 @@
 		<java.version>1.8</java.version>
 		<spring.cloud.version>Hoxton.SR8</spring.cloud.version>
 		<spring.cloud.alibaba.version>2.2.4.RELEASE</spring.cloud.alibaba.version>
+        <org.apache.dubbo.version>2.7.8</org.apache.dubbo.version>
 		<docker.env>liuhx</docker.env>
 		<docker.image.prefix>registry.cn-qingdao.aliyuncs.com/${docker.env}</docker.image.prefix>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

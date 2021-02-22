@@ -3,7 +3,6 @@ package com.liuhx.nacos.consumer.controller;
 import javax.annotation.Resource;
 
 import com.alibaba.fastjson.JSON;
-import com.liuhx.nacos.common.config.exception.CommonException;
 import com.liuhx.nacos.common.config.response.CommonResponse;
 import com.liuhx.nacos.common.entity.po.User;
 import com.liuhx.nacos.consumer.feign.UserService;

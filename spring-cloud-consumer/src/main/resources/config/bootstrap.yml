@@ -23,6 +23,15 @@ spring:
             transport:
                 port: 8719
                 dashboard: aliyun:8858
+dubbo:
+  registry:
+    address: nacos://aliyun:8848
+    parameters:
+      namespace: 8566ec2e-1343-4dcb-97b2-62010191d501
+      group: nacos-demo
+  consumer:
+    timeout: 30000
+    retries: 0
 server:
   port: 8080
   servlet:
