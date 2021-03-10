@@ -1,0 +1,19 @@
+spring:
+  redis:
+    port: 6379
+    host: aliyun
+    database: 0
+    password: iDBNcJ9CKTb6Yr9
+    ssl: false
+    jedis:
+      pool:
+        max-active: 1000
+        max-idle: 100
+        min-idle: 0
+#    sentinel:
+#      master: mymaster
+#      nodes: 10.2.7.178:26379,10.2.7.178:26379,10.2.7.178:26379
+key:
+  user:
+    token: 'data:user:token:'
+    id: 'data:user:id:'

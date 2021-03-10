@@ -72,4 +72,14 @@ public class UserController {
     public User getToken(String token){
         return userService.getToken(token);
     }
+
+    @GetMapping("testException")
+    public int testException(){
+        try {
+            Thread.sleep(30*1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return 1;
+    }
 }

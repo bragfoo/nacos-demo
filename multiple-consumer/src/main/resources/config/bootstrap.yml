@@ -23,6 +23,9 @@ spring:
             transport:
                 port: 8719
                 dashboard: aliyun:8858
+feign:
+  sentinel:
+    enabled: true
 dubbo:
   registry:
     address: nacos://aliyun:8848

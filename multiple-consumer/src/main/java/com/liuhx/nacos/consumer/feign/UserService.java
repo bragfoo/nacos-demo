@@ -18,4 +18,6 @@ public interface UserService {
     CommonResponse<List<User>> findAllUser();
     @RequestMapping(value = "getToken",method = RequestMethod.GET)
     CommonResponse<User> getToken(@RequestParam("token") String token);
+    @GetMapping("testException")
+    CommonResponse<Integer> testException();
 }

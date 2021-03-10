@@ -38,4 +38,9 @@ public class CarController {
     public Boolean openDoor(String carId){
         return carOperateService.operate("openDoor",carId);
     }
+
+    @GetMapping("testException")
+    public int testException(){
+       return userService.testException().getData();
+    }
 }
