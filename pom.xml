@@ -7,7 +7,6 @@
         <module>user</module>
         <module>common</module>
         <module>multiple-consumer</module>
-        <module>gateway</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -28,7 +27,7 @@
 		<spring.cloud.alibaba.version>2.2.4.RELEASE</spring.cloud.alibaba.version>
         <org.apache.dubbo.version>2.7.8</org.apache.dubbo.version>
 		<docker.env>liuhx</docker.env>
-		<docker.image.prefix>registry.cn-qingdao.aliyuncs.com/${docker.env}</docker.image.prefix>
+		<docker.image.prefix>registry.cn-wulanchabu.aliyuncs.com/${docker.env}</docker.image.prefix>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- 设置时间格式 -->
 		<maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>

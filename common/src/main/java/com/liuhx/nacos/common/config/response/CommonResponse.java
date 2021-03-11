@@ -26,4 +26,11 @@ public class CommonResponse<T> {
         message = "SUCCESS";
         data = d;
     }
+
+    public CommonResponse(String code, String message, T d) {
+        timestamp = System.currentTimeMillis();
+        this.code = code;
+        this.message = message;
+        data = d;
+    }
 }

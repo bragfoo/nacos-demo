@@ -4,6 +4,7 @@ import java.util.concurrent.locks.Lock;
 
 import javax.annotation.Resource;
 
+import com.alibaba.csp.sentinel.slots.block.RuleConstant;
 import com.liuhx.nacos.common.config.exception.CommonException;
 import com.liuhx.nacos.common.dubbo.OperateCarService;
 import com.liuhx.nacos.consumer.service.CarOperateService;
