@@ -5,6 +5,7 @@ import com.liuhx.nacos.common.entity.po.User;
 import com.liuhx.nacos.common.entity.vo.request.LoginRequestVo;
 import com.liuhx.nacos.common.entity.vo.response.LoginResponseVo;
 import com.liuhx.nacos.common.repo.UserRepository;
+import com.liuhx.nacos.user.service.UserBloomFilterService;
 import com.liuhx.nacos.user.service.UserService;
 import com.liuhx.nacos.user.utils.MD5Utils;
 import com.mongodb.client.result.UpdateResult;
@@ -42,6 +43,8 @@ public class UserServiceImpl implements UserService {
     private String userTokenKey;
     @Value("${key.user.id}")
     private String userIdKey;
+    @Resource
+    UserBloomFilterService userBloomFilterService;
 
     @Resource
     StringRedisTemplate stringRedisTemplate;
@@ -117,7 +120,9 @@ public class UserServiceImpl implements UserService {
         String password = MD5Utils.getMd5String("123456");
         user.setCreateDate(LocalDateTime.now());
         user.setPassword(password);
-        return userRepository.save(user);
+        user = userRepository.save(user);
+        userBloomFilterService.insert(user.getId());
+        return user;
     }
 
     /**

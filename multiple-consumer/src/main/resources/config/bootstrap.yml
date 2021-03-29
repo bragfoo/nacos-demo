@@ -30,7 +30,7 @@ spring:
                   server-addr: aliyun:8848
                   data-id: multiple-consumer
                   data-type: json
-                  rule-type: flow
+                  rule-type: degrade
 feign:
   sentinel:
     enabled: true
@@ -49,3 +49,5 @@ server:
     context-path: /
 logging:
   config:  ${spring.config.location:classpath:config}/logback.xml
+zookeeper:
+  connectionString: localhost:2181

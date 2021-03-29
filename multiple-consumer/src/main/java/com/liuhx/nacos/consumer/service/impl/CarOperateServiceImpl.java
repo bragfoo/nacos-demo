@@ -12,6 +12,8 @@ import com.liuhx.nacos.consumer.service.CarOperateService;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.http.HttpStatus;
 import org.springframework.integration.redis.util.RedisLockRegistry;
+import org.springframework.integration.zookeeper.config.LeaderInitiatorFactoryBean;
+import org.springframework.integration.zookeeper.lock.ZookeeperLockRegistry;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -20,10 +22,13 @@ public class CarOperateServiceImpl implements CarOperateService {
     RedisLockRegistry redisLockRegistry;
     @DubboReference
     private OperateCarService operateService;
-
+    @Resource
+    ZookeeperLockRegistry zookeeperLockRegistry;
     @Override
     public boolean operate(String method, String carId) {
+
         Lock lock = redisLockRegistry.obtain(carId);
+        Lock zooLock = zookeeperLockRegistry.obtain(carId);
         if (lock.tryLock()) {
             boolean operate = false;
             try {
